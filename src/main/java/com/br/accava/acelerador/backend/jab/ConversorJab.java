@@ -56,7 +56,7 @@ public class ConversorJab {
 	private static final String DECLARACAO_SUB_PUBLICA = "public sub";
 	private static final String DECLARACAO_SUB_PRIVADA = "private sub";
 	private static final String DECLARACAO_FIM_FUNCAO = "end function";
-	private static final String DECLARACAO_FIM_SUB = "end function";
+	private static final String DECLARACAO_FIM_SUB = "end sub";
 
 	private static int emDeclaracaoPublica = 0;
 	private static int emDeclaracaoPrivada = 0;
@@ -82,8 +82,8 @@ public class ConversorJab {
 
 	/*--------------------------------------------- Inicio dos Metodos ------------------------------------------*/
 	public static void main(String[] args) throws Exception {
-//		buscaArquivos(new File(pastaRaiz));
-		iniciaLeituraArquivoCls(new File(ARQUIVO_SOLTO));
+		buscaArquivos(new File(pastaRaiz));
+//		iniciaLeituraArquivoCls(new File(ARQUIVO_SOLTO));
 		imprimirEstrutura();
 	}
 	
@@ -209,6 +209,7 @@ public class ConversorJab {
 		return mmpu;
 	}
 
+	
 	/**@Complexidade 2/5*/
 	private static void construirAtributoMetodoModelo(String l, String lo) {
 		if (emDeclaracaoPublica > 0 && emDeclaracaoPrivada <= 0) {
