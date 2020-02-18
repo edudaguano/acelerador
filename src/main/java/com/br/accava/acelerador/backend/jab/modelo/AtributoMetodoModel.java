@@ -1,4 +1,4 @@
-package com.br.accava.acelerador.backend.modelo;
+package com.br.accava.acelerador.backend.jab.modelo;
 
 public class AtributoMetodoModel {
 
