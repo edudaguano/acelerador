@@ -62,36 +62,46 @@ public class CriacaoDaoImpl {
 					}
 					atributosMetodo =  "(" + atributosMetodo + ")" + ";";
 					atributosMetodo = atributosMetodo.replace(", );", ") {");
-					bw.append("\t public String "+mm.getNomeMetodo() + atributosMetodo);
+					bw.append("\tpublic String "+mm.getNomeMetodo() + atributosMetodo);
 					bw.append(System.lineSeparator());
 
 					if (mm.getListaChamada() != null) {
 						for (ChamadaModel cm : mm.getListaChamada()) {
-							if (cm != null) {
-								if (cm.getNomeChamada() != null) {
-									String atributo = "";
-									if (cm.getAtributos() != null) {
-										for (String atrr : cm.getAtributos()) {
-											atributo += atrr +", ";
+							if (cm.getTipoChamada().contains("PROC")) {
+								if (cm != null) {
+									if (cm.getNomeChamada() != null) {
+										String atributo = "";
+										if (cm.getAtributos() != null) {
+											for (String atrr : cm.getAtributos()) {
+												atributo += atrr +", ";
+											}
+											atributo += ");";
 										}
-										atributo += ");";
+										if (atributo != null && !atributo.trim().equals("")) {
+											atributo = atributo.replace(", );", ");");
+										}
+										bw.append(System.lineSeparator());
+										bw.append("\t\t" +cm.getNomeChamada() + "(" + atributo );
+										bw.append(System.lineSeparator());
+										bw.append(System.lineSeparator());
 									}
-									if (atributo != null && !atributo.trim().equals("")) {
-										atributo = atributo.replace(", );", ");");
-									}
+								}
+							}  else if (cm.getTipoChamada().contains("PROG")  || cm.getTipoChamada().contains("TRAN") ) {
+								if (cm.getTipoChamada().contains("PROG")) {
+									bw.append("\t\t//Programa: " + cm.getTipoChamada() + " - " + cm.getNomeChamada());
 									bw.append(System.lineSeparator());
-									bw.append("\t\t" +cm.getNomeChamada() + "(" + atributo );
-									bw.append(System.lineSeparator());
+								} else if (cm.getTipoChamada().contains("TRAN")) {
+									bw.append("\t\t//Transacao: " + cm.getTipoChamada() + " - " + cm.getNomeChamada());
 									bw.append(System.lineSeparator());
 								}
 							}
 						}
-						bw.append("\t}");
-						bw.append(System.lineSeparator());
-						bw.append(System.lineSeparator());
 					}
-
+					bw.append("\t}");
+					bw.append(System.lineSeparator());
+					bw.append(System.lineSeparator());
 				}
+
 			}
 		}
 
@@ -128,6 +138,7 @@ public class CriacaoDaoImpl {
 		packageJr = packageJr.substring(1, packageJr.lastIndexOf(".")) + ";";
 		packageJr = packageJr.replace("main.", "");
 		packageJr = packageJr.substring(0, packageJr.lastIndexOf("."));
+		packageJr = packageJr+"."+nomeInterface+"Dao;";
 		return packageJr;
 	}
 

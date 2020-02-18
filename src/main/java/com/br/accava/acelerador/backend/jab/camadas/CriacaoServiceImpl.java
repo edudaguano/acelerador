@@ -13,7 +13,6 @@ public class CriacaoServiceImpl {
 
 
 	private static String nomeInterface = "";
-	private static String packageJr =  "";
 
 	public void criarServiceImpl(ClsModel clsModel, String caminhoEspelhado) throws Exception {
 		BufferedWriter bw = new BufferedWriter(new FileWriter(new File(caminhoEspelhado)));
@@ -21,10 +20,22 @@ public class CriacaoServiceImpl {
 		String packageBasico = configuracaoBasica(clsModel, caminhoEspelhado);
 		String importBasico =  configuracaoBasicaImport(clsModel, caminhoEspelhado);
 
-		bw.append("package " + packageBasico);
+		String importInterface = packageBasico.substring(0, packageBasico.indexOf(".impl"));
+		importInterface = importInterface +"."+ nomeInterface + "Service;";
+		
+		String importDaoInterface = packageBasico.substring(0, packageBasico.indexOf(".service.impl"));
+		importDaoInterface = importDaoInterface +".dao."+ nomeInterface + "Dao;";
+		
+		
+		bw.append("package  " + packageBasico);
 		bw.append(System.lineSeparator());
+
 		bw.append(System.lineSeparator());
-		bw.append("import " + importBasico);
+		bw.append("import " + importInterface );
+		
+		bw.append(System.lineSeparator());
+		bw.append("import "+ importDaoInterface);
+		
 		bw.append(System.lineSeparator());
 		bw.append("import org.slf4j.Logger;\r\n" + 
 				"import org.slf4j.LoggerFactory;\r\n" + 
@@ -65,7 +76,7 @@ public class CriacaoServiceImpl {
 					}
 					atributosMetodo =  "(" + atributosMetodo + ")" + ";";
 					atributosMetodo = atributosMetodo.replace(", );", ") {");
-					bw.append("\t public String "+mm.getNomeMetodo() + atributosMetodo);
+					bw.append("\tpublic String "+mm.getNomeMetodo() + atributosMetodo);
 					bw.append(System.lineSeparator());
 					atributosMetodo = atributosMetodo.replace("String","");
 					atributosMetodo = atributosMetodo.replace("{",";");

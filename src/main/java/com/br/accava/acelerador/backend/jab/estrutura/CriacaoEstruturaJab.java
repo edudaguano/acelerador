@@ -15,6 +15,13 @@ import com.br.accava.acelerador.intermediateutility.zip.ZipHandler;
 /**@Complexidade 5/5*/
 public class CriacaoEstruturaJab {
 
+	
+	private static int contadorCls = 0;
+	private static int contadorMetodosPublicos = 0;
+	private static int contadorChamadasProcOE = 0;
+	
+	/*----------------------------------------------------------------------------------------------------------------*/
+	
 	private static String pastaRaiz = "C:\\Users\\eduardo.m.daguano\\Desktop\\Componentes";
 	private static final String ARQUIVO_SOLTO =  "C:\\Users\\eduardo.m.daguano\\Desktop\\ProjAcelerador\\DeParaRieOff.cls";
 
@@ -562,12 +569,14 @@ public class CriacaoEstruturaJab {
 
 		for (ClsModel clsModel : listaArquivosCLS) {
 			if (clsModel != null) {
+				contadorCls++;
 				System.out.println("---------------------------------- Gerando Estrutura Lida --------------------------------------");
 				System.out.println(clsModel.getCaminhoCls());
 				System.out.println(clsModel.getNomeCls());
 				System.out.println();
 				if (clsModel.getListaMetodos() != null) {
 					for(MetodoModel mm : clsModel.getListaMetodos()) {
+						contadorMetodosPublicos++;
 						System.out.println(mm.getDeclaracaoMetodo());
 						System.out.println(mm.getNomeMetodo());
 						if (mm.getListaAtributoMetodo() != null) {
@@ -577,6 +586,7 @@ public class CriacaoEstruturaJab {
 						}
 						if (mm.getListaChamada() != null) {
 							for (ChamadaModel cm : mm.getListaChamada()) {
+								contadorChamadasProcOE++;
 								if (cm.getTipoChamada().equals("PROG MF") || cm.getTipoChamada().equals("TRAN MF")) {
 									System.out.println("\t "+ cm.getTipoChamada() +": " +cm.getNomeChamada() );
 								} else {
@@ -597,6 +607,9 @@ public class CriacaoEstruturaJab {
 			}
 
 		}
+		System.out.println("Arquivos CLS: " + contadorCls);
+		System.out.println("Metodos Publicos: " + contadorMetodosPublicos);
+		System.out.println("Contador de Chamadas a Procs e Transacooes OE: " + contadorChamadasProcOE);
 	}
 
 }

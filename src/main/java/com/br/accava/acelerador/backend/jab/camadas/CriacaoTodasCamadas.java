@@ -36,7 +36,7 @@ public class CriacaoTodasCamadas {
 	private static CriacaoEndPoint enpoint =  new CriacaoEndPoint();
 	private static final String pacoteEndPoint = "";
 
-	private static CriacaoWebService webservice =  new CriacaoWebService();
+	private static CriacaoWebService webService =  new CriacaoWebService();
 	private static final String pacoteWebService = "";
 
 	private static boolean estruturaJab = true;
@@ -75,6 +75,12 @@ public class CriacaoTodasCamadas {
 			String caminhoServiceImpl =  caminhoEspelhado + "jab-"+SIGLA+ "-srv\\src\\main\\java\\com\\altec\\bsbr\\app\\jab\\"+ SIGLA+"\\service\\impl";
 			caminhoServiceImpl = caminhoServiceImpl + "\\" + clsModel.getNomeCls().replace(".cls", "ServiceImpl.java");
 			serviceImpl.criarServiceImpl(clsModel, caminhoServiceImpl);
+		}
+
+		for (ClsModel clsModel : listaArquivosCLS) {
+			String caminhoWebService =  caminhoEspelhado + "jab-"+SIGLA+ "-srv\\src\\publish\\java\\com\\altec\\bsbr\\app\\jab\\"+ SIGLA+"\\service";
+			caminhoWebService = caminhoWebService + "\\" + clsModel.getNomeCls().replace(".cls", "WebService.java");
+			webService.criarWebService(clsModel, caminhoWebService);
 		}
 		
 	}

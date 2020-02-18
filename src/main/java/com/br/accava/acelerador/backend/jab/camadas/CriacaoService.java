@@ -61,7 +61,7 @@ public class CriacaoService {
 						}
 					atributosMetodo =  "(" + atributosMetodo + ")" + ";";
 					atributosMetodo = atributosMetodo.replace(", );", ") throws BusinessException;");
-					bw.append("\t public String "+ mm.getNomeMetodo() + atributosMetodo);
+					bw.append("\tpublic String "+ mm.getNomeMetodo() + atributosMetodo);
 					bw.append(System.lineSeparator());
 					}
 				}
