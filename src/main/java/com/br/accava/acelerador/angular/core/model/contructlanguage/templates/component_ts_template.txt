@@ -1,0 +1,5 @@
+@Component({
+    selector: 'app-{$name$}',
+    templateUrl: './{$name$}.component.html',
+    styleUrls: ['{$styles_component$}']
+  })

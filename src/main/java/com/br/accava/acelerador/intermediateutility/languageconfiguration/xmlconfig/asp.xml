@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language>
+    <type>asp</type>
+    <info>
+        <functions>
+            <function>sub</function>
+            <function>function</function>
+        </functions>
+        <functionelements>
+            <start></start>
+            <end>end $function$</end>
+        </functionelements>
+        <modifier>
+            <private>private</private>
+            <public>public</public>
+            <protected>protected</protected>
+            <default>default</default>
+        </modifier>
+        <datatype>
+            <stringdatatype>dim</stringdatatype>
+            <intdatatype>dim</intdatatype>
+            <doubledatatype>dim</doubledatatype>
+            <floatdatatype>dim</floatdatatype>
+            <bytedatatype>dim</bytedatatype>
+            <shortdatatype>dim</shortdatatype>
+            <longdatatype>dim</longdatatype>
+            <chardatatype>dim</chardatatype>
+            <booleandatatype>dim</booleandatatype>
+            <integerdatatype>dim</integerdatatype>
+
+        </datatype>
+        <variablenametype>
+            <stringname>str|txt|obj</stringname>
+            <intname>int</intname>
+            <doublename>dbl</doublename>
+            <floatname></floatname>
+            <bytename></bytename>
+            <shortname></shortname>
+            <longname>lgn</longname>
+            <charname></charname>
+            <booleanname>bln</booleanname>
+        </variablenametype>
+        <operator>
+            <addition></addition>
+            <subtraction></subtraction>
+            <multiplication></multiplication>
+            <division></division>
+            <modulus></modulus>
+            <increment></increment>
+            <decrement></decrement>
+        </operator>
+        <loop>
+            <for></for>
+            <while></while>
+
+        </loop>
+        <array>
+
+        </array>
+
+        <conditions>
+            <if>If $condition$ Then $body$</if>
+            <else>else $body$ End if</else>
+        </conditions>
+    </info>
+
+</language>
+

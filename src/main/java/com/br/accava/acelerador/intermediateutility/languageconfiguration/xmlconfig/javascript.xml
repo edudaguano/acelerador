@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+    <type value="javascript"/>
+    <info>
+        <functions>
+            <function>function</function>
+        </functions>
+        <functionelements>
+            <start>{</start>
+            <end>}</end>
+        </functionelements>
+        <modifier>
+            <private>private</private>
+            <public>public</public>
+            <protected>protected</protected>
+            <default>default</default>
+        </modifier>
+        <datatype>
+            <stringdatatype></stringdatatype>
+            <intdatatype></intdatatype>
+            <doubledatatype></doubledatatype>
+            <floatdatatype></floatdatatype>
+            <bytedatatype></bytedatatype>
+            <shortdatatype></shortdatatype>
+            <longdatatype></longdatatype>
+            <chardatatype></chardatatype>
+            <booleandatatype></booleandatatype>
+            <integerdatatype></integerdatatype>
+
+        </datatype>
+        <variablenametype>
+            <stringname></stringname>
+            <intname></intname>
+            <doublename></doublename>
+            <floatname></floatname>
+            <bytename></bytename>
+            <shortname></shortname>
+            <longname></longname>
+            <charname></charname>
+            <booleanname></booleanname>
+        </variablenametype>
+        <operator>
+            <addition></addition>
+            <subtraction></subtraction>
+            <multiplication></multiplication>
+            <division></division>
+            <modulus></modulus>
+            <increment></increment>
+            <decrement></decrement>
+        </operator>
+        <loop>
+            <for></for>
+            <while></while>
+
+        </loop>
+        <array>
+
+        </array>
+
+        <conditions>
+            <if>if($condition$){ $bodyIf$</if>
+            <else>} else { $bodyIf$ }</else>
+        </conditions>
+    </info>
+
+</language>
+

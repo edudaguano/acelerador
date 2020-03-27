@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language>
+    <type>java</type>
+    <info>
+        <functions>
+            <function></function>
+            <function></function>
+        </functions>
+        <functionelements>
+            <start>{</start>
+            <end>}</end>
+        </functionelements>
+        <modifier>
+            <private>private</private>
+            <public>public</public>
+            <protected>protected</protected>
+            <default>default</default>
+        </modifier>
+        <datatype>
+            <stringdatatype>String</stringdatatype>
+            <intdatatype>int</intdatatype>
+            <doubledatatype>double</doubledatatype>
+            <floatdatatype>float</floatdatatype>
+            <bytedatatype>byte</bytedatatype>
+            <shortdatatype>short</shortdatatype>
+            <longdatatype>long</longdatatype>
+            <chardatatype>char</chardatatype>
+            <booleandatatype>boolean</booleandatatype>
+            <integerdatatype>Integer</integerdatatype>
+
+        </datatype>
+        <operator>
+            <addition></addition>
+            <subtraction></subtraction>
+            <multiplication></multiplication>
+            <division></division>
+            <modulus></modulus>
+            <increment></increment>
+            <decrement></decrement>
+        </operator>
+        <loop>
+            <for></for>
+            <while></while>
+
+        </loop>
+        <array>
+
+        </array>
+
+        <conditions>
+            <if>If $condition$ Then $body$</if>
+            <else>else $body$ End if</else>
+        </conditions>
+    </info>
+
+</language>
+

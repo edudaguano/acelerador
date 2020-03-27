@@ -1,0 +1,98 @@
+Javascript -----------------------------------------------------------------------------------------------------
+De:
+with(document.forms[0]){
+		target = 'Detalhes';
+		action = theURL;
+		method = 'post';
+		submit();
+	}
+
+Para:
+document.forms[0].target = 'Detalhes';
+document.forms[0].action = theURL;
+document.forms[0].method = 'post';
+
+De:
+<%if request("txtPosCons") = "S" then%>
+Para:
+//<%if request("txtPosCons") = "S" then%>
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+Asp -----------------------------------------------------------------------------------------------------------
+De:
+if vInStrCritBusca = "A2" or vInStrCritBusca = "A3" or vInStrCritBusca = "A7" or vInStrCritBusca = "A8" then
+	if vstrTipoData = "0" then 'Debito
+		vStrDatDebIni  = vStrDatIni
+		vStrDatDebFin  = vStrDatFim
+		vStrDatPgtoIni = ""
+		vStrDatPgtoFin = ""
+	else 'pagamento
+		vStrDatDebIni  = ""
+		vStrDatDebFin  = ""
+		vStrDatPgtoIni = vStrDatIni
+		vStrDatPgtoFin = vStrDatFim
+	end if
+end if
+
+
+Para:
+
+if(vInStrCritBusca === "A2" || vInStrCritBusca === "A3" || vInStrCritBusca === "A7" || vInStrCritBusca === "A8"){
+	if(vstrTipoData === "0"){ //Debito
+		vStrDatDebIni  = vStrDatIni;
+		vStrDatDebFin  = vStrDatFim;
+		vStrDatPgtoIni = "";
+		vStrDatPgtoFin = "";
+	}
+	else{
+	    'pagamento
+		vStrDatDebIni  = "";
+		vStrDatDebFin  = "";
+		vStrDatPgtoIni = vStrDatIni;
+		vStrDatPgtoFin = vStrDatFim;
+	}
+}
+
+
+De:
+    Dim intNumOcorrRet
+    Dim strRemessa_Rea
+    Dim lngNumCompr_Rea
+    Dim intNumReg
+    Dim strInd_Rea
+
+Para:
+    intNumOcorrRet:number;
+    strRemessa_Rea: string;
+    lngNumCompr_Rea:number;
+    intNumReg:number;
+    strInd_Rea:String;
+
+
+
+De:
+    select case strOpt
+    	case "C" : varSecNivel="Consulta"
+    	case "B" : varSecNivel="Bloqueio"
+    	case "D" : varSecNivel="Desbloqueio"
+    	case "E" : varSecNivel="Exclus&atilde;o"
+    	case "A" : varSecNivel="Altera&ccedil;&atilde;o" : strSituacaoHost = " 9"
+    	'consulta sacado eletronico
+    	case "N" : varSecNivel="Consulta"
+    end select
+
+Para:
+
+
+De:
+    ContaCentralizadora = Right("0000000000000" & Replace(Request.Form("hdnCentr2via"), "-", ""), 13)
+
+    vStrCentroAltaDeb= mid(ContaCentralizadora,1,4)
+    vStrCuentaDeb	= "000" & mid(ContaCentralizadora,5,9)
+    intNumOcorrRet = "204"
+
+Para:
+---------------------------------------------------------------------------------------------------------------

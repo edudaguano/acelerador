@@ -1,0 +1,6 @@
+switch({$expression$}) {
+   {$cases$}
+   default: {
+      //statements;
+      break;
+   }

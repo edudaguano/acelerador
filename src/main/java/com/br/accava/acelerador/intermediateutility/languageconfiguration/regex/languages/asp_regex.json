@@ -1,0 +1,8 @@
+
+  {
+    "language": "asp",
+    "insideDetect": "<%\\s*([\\s\\S]*?)\\s*%>",
+    "importDetect": "<!--\\s*([\\s\\S]*?)\\s*-->",
+    "backCallDetect": "set *([\\w]*) *= *[\\w|.]*\\.?createobject *\\([\"\"|']([\\w|.|\\/]*)[\"\"|']",
+    "valueHtm": "<%=\\s*([\\s\\S]*?)\\s*%>"
+  }

@@ -1,0 +1,5 @@
+
+  {
+    "language": "html",
+    "tagDetect": "<$tag$[^<>]*>([\\s\\S]*?)<\\/$tag$>"
+  }

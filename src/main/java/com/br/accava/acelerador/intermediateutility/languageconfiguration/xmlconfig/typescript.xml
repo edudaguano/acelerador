@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language>
+    <type>angular</type>
+    <info>
+        <functions>
+            <function>function</function>
+        </functions>
+        <functionelements>
+            <start>{</start>
+            <end>}</end>
+        </functionelements>
+        <modifier>
+            <private>private</private>
+            <public>public</public>
+            <protected>protected</protected>
+            <default></default>
+        </modifier>
+        <datatype>
+            <stringdatatype>string</stringdatatype>
+            <intdatatype>number</intdatatype>
+            <doubledatatype>number</doubledatatype>
+            <floatdatatype>number</floatdatatype>
+            <bytedatatype></bytedatatype>
+            <shortdatatype>number</shortdatatype>
+            <longdatatype>number</longdatatype>
+            <chardatatype>string</chardatatype>
+            <booleandatatype>boolean</booleandatatype>
+            <integerdatatype>number</integerdatatype>
+
+        </datatype>
+        <operator>
+            <addition></addition>
+            <subtraction></subtraction>
+            <multiplication></multiplication>
+            <division></division>
+            <modulus></modulus>
+            <increment></increment>
+            <decrement></decrement>
+        </operator>
+        <loop>
+            <for></for>
+            <while></while>
+
+        </loop>
+        <array>
+
+        </array>
+
+        <conditions>
+            <if>
+                if ($condition$)
+                {
+                    $body$
+                }
+            </if>
+            <else>
+                else{
+                    $body$
+                }
+            </else>
+        </conditions>
+    </info>
+
+</language>
